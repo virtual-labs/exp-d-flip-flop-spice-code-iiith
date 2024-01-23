@@ -2,38 +2,174 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the primary function of a D flip-flop?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "To generate clock signals",
+        "b": "To store a single bit of data",
+        "c": "To perform addition operations",
+        "d": "To invert input signals"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. D flip-flops do not generate clock signals.",
+        "b": "Correct. A D flip-flop is designed to store a single bit of data.",
+        "c": "Incorrect. D flip-flops are not designed for arithmetic operations.",
+        "d": "Incorrect. Inversion of signals is typically done by inverters, not D flip-flops."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In the context of a D flip-flop, what does the term 'clock edge' refer to?",
+      "answers": {
+        "a": "The rising or falling transition of the clock signal",
+        "b": "The input data signal",
+        "c": "The output data signal",
+        "d": "The power supply voltage"
+      },
+      "explanations": {
+        "a": "Correct. The 'clock edge' refers to the rising or falling transition of the clock signal.",
+        "b": "Incorrect. The input data signal is not referred to as the 'clock edge'.",
+        "c": "Incorrect. The output data signal is not referred to as the 'clock edge'.",
+        "d": "Incorrect. The 'clock edge' specifically relates to the clock signal transition."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is the significance of the 'neg' label in the 'd_flipflop' subcircuit?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "It indicates a negative voltage supply",
+        "b": "It denotes a negative clock edge trigger",
+        "c": "It represents a negative logic signal",
+        "d": "It has no significance in this context"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. 'neg' does not indicate a negative voltage supply in this context.",
+        "b": "Correct. 'neg' denotes a negative clock edge trigger in the 'd_flipflop' subcircuit.",
+        "c": "Incorrect. 'neg' does not represent a negative logic signal in this context.",
+        "d": "Incorrect. 'neg' does have significance as it denotes the negative clock edge trigger."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
       "difficulty": "beginner"
+    },
+    {
+      "question": "What is the purpose of the '.tran' statement in SPICE simulation?",
+      "answers": {
+        "a": "To define subcircuits",
+        "b": "To specify transient analysis parameters",
+        "c": "To generate clock signals",
+        "d": "To set voltage levels"
+      },
+      "explanations": {
+        "a": "Incorrect. Subcircuits are defined using '.subckt' statements.",
+        "b": "Correct. The '.tran' statement specifies transient analysis parameters in SPICE simulation.",
+        "c": "Incorrect. Generating clock signals is not the purpose of the '.tran' statement.",
+        "d": "Incorrect. Setting voltage levels is not the primary purpose of the '.tran' statement."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does the 'Xn' label represent in the code?",
+      "answers": {
+        "a": "A voltage source",
+        "b": "A subcircuit instance of a D flip-flop",
+        "c": "A pass transistor",
+        "d": "An inverter"
+      },
+      "explanations": {
+        "a": "Incorrect. 'Xn' does not represent a voltage source.",
+        "b": "Correct. 'Xn' is a subcircuit instance of a D flip-flop.",
+        "c": "Incorrect. 'Xn' does not represent a pass transistor.",
+        "d": "Incorrect. 'Xn' does not represent an inverter."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the role of the 'control' signal in the 'pass_transistor' subcircuit?",
+      "answers": {
+        "a": "To generate clock signals",
+        "b": "To control the pass transistor's conductivity",
+        "c": "To provide input data",
+        "d": "To trigger the D flip-flop"
+      },
+      "explanations": {
+        "a": "Incorrect. The 'control' signal is not involved in generating clock signals.",
+        "b": "Correct. The 'control' signal in the 'pass_transistor' subcircuit controls the pass transistor's conductivity.",
+        "c": "Incorrect. The 'control' signal is not used to provide input data.",
+        "d": "Incorrect. The 'control' signal does not directly trigger the D flip-flop."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What does the 'plot v(out)' statement in the '.control' block do?",
+      "answers": {
+        "a": "Plots the input signals 'a' and 'clk'",
+        "b": "Plots the output signals of the D-Flip-Flop",
+        "c": "Sets the background color of the plot",
+        "d": "Defines the parameters for transient analysis"
+      },
+      "explanations": {
+        "a": "Incorrect. The 'plot' statement specifies the input signals 'a' and 'clk', not 'out'.",
+        "b": "Correct. The 'plot v(out)' statement plots the output signal of the D-Flip-Flop.",
+        "c": "Incorrect. Setting the background color is not done with the 'plot' statement.",
+        "d": "Incorrect. Defining parameters for transient analysis is done using '.PARAM' statements."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What does the '.global vdd gnd' statement do?",
+      "answers": {
+        "a": "Defines global parameters for transient analysis",
+        "b": "Specifies global nodes for the power supply",
+        "c": "Sets global parameters for pass transistors",
+        "d": "Includes external subcircuits"
+      },
+      "explanations": {
+        "a": "Incorrect. '.global' is not used for defining global parameters for transient analysis.",
+        "b": "Correct. '.global vdd gnd' specifies global nodes for the power supply (vdd) and ground (gnd).",
+        "c": "Incorrect. Global parameters for pass transistors are set using '.PARAM' statements.",
+        "d": "Incorrect. Including external subcircuits is typically done with '.include' statements."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the purpose of the 'VVDD' voltage source in the code?",
+      "answers": {
+        "a": "To generate clock signals",
+        "b": "To supply power to the entire circuit",
+        "c": "To provide input data",
+        "d": "To control the pass transistors"
+      },
+      "explanations": {
+        "a": "Incorrect. 'VVDD' is not used for generating clock signals.",
+        "b": "Correct. 'VVDD' is a voltage source supplying power to the entire circuit.",
+        "c": "Incorrect. Providing input data is not the purpose of 'VVDD'.",
+        "d": "Incorrect. 'VVDD' does not directly control the pass transistors."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "What does the '.include PTM_45nm.txt' statement do?",
+      "answers": {
+        "a": "Defines global parameters for transient analysis",
+        "b": "Includes a subcircuit for a 45nm technology process",
+        "c": "Sets global parameters for pass transistors",
+        "d": "Specifies voltage levels"
+      },
+      "explanations": {
+        "a": "Incorrect. '.include PTM_45nm.txt' is not used for defining global parameters for transient analysis.",
+        "b": "Correct. '.include PTM_45nm.txt' includes a subcircuit for a 45nm technology process.",
+        "c": "Incorrect. Global parameters for pass transistors are set using '.PARAM' statements.",
+        "d": "Incorrect. Specifying voltage levels is not the primary purpose of '.include PTM_45nm.txt'."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
     }
   ]
 }

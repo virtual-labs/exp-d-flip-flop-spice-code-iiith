@@ -1,0 +1,4 @@
+
+Checking parameters for BSIM 4.5 model pmos
+Fatal: Vsat at current temperature = -16976.5 is not positive.
+Warning: Vsat at current temperature = -16976.5 may be too small.
