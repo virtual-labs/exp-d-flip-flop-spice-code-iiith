@@ -1,3 +1,3 @@
-1. To write and simulate spice codes for:  
-   i.To design a D-Flip-Flop using D-Latches built using Pass Transistor Logic
-2. To write spice code for any transistor level schematic.
+1. To design a D-flip-flop circuit using master-slave D-latch configuration.
+2. To implement the D-flip-flop using pass transistor logic in SPICE netlist code.
+3. To analyze the edge-triggered behavior of the D-flip-flop through simulation.
