@@ -44,8 +44,8 @@
         "d": "By the output signal 'out'"
       },
       "explanations": {
-        "a": "Incorrect. The D-Latch in the 'd_latch' subcircuit is triggered by the 'clk' signal.",
-        "b": "Incorrect. The D-Latch is triggered by the positive edge of the 'clk' signal.",
+        "a": "Incorrect. The D-Latch in the 'd_latch' subcircuit is triggered by the 'clk' signal, but the actual data transfer is controlled by the input signal 'in'.",
+        "b": "Incorrect. The D-Latch is not triggered by an inverted clock signal in this subcircuit.",
         "c": "Correct. The D-Latch is triggered by the input signal 'in'.",
         "d": "Incorrect. The D-Latch is not triggered by the output signal 'out'."
       },
@@ -63,7 +63,7 @@
       "explanations": {
         "a": "Incorrect. Inversion is performed by the 'inverter' subcircuit.",
         "b": "Incorrect. Clock signal generation is not the purpose of the 'mux' subcircuit.",
-        "c": "Correct. The 'mux' subcircuit acts as a 2:1 MUX.",
+        "c": "Correct. The 'mux' subcircuit acts as a 2:1 MUX, selecting between two inputs based on a control signal.",
         "d": "Incorrect. The 'mux' subcircuit is not responsible for triggering the D-Latch."
       },
       "correctAnswer": "c",
@@ -78,9 +78,9 @@
         "d": "Two pass transistors"
       },
       "explanations": {
-        "a": "Incorrect. The 'd_flipflop' subcircuit combines a D-Latch and an inverter.",
+        "a": "Incorrect. The 'd_flipflop' subcircuit combines a clock signal and a D-Latch, not just an inverter and clock.",
         "b": "Incorrect. The 'd_flipflop' subcircuit contains only one D-Latch.",
-        "c": "Correct. The 'd_flipflop' subcircuit combines a clock signal and a D-Latch.",
+        "c": "Correct. The 'd_flipflop' subcircuit combines a clock signal and a D-Latch to achieve edge-triggered operation.",
         "d": "Incorrect. The 'd_flipflop' subcircuit does not involve two pass transistors."
       },
       "correctAnswer": "c",
@@ -95,7 +95,7 @@
         "d": "supply"
       },
       "explanations": {
-        "a": "Correct. The parameter 'Wp' sets the width of the pass transistor.",
+        "a": "Correct. The parameter 'Wp' sets the width of the pass transistor, which can affect propagation delay.",
         "b": "Incorrect. 'Wmin' sets the minimum width, but 'Wp' is used for the actual width.",
         "c": "Incorrect. 'Lmin' sets the minimum length, not the width of the pass transistor.",
         "d": "Incorrect. 'supply' is not used for setting the width of the pass transistor."
@@ -112,7 +112,7 @@
         "d": "To control the pass transistors"
       },
       "explanations": {
-        "a": "Correct. 'V1' and 'V2' are voltage sources supplying power to the circuit.",
+        "a": "Correct. 'V1' and 'V2' are voltage sources supplying power to the circuit, ensuring proper operation and timing.",
         "b": "Incorrect. They are not specifically designed for generating clock signals.",
         "c": "Incorrect. 'V1' and 'V2' are voltage sources, not input signal generators.",
         "d": "Incorrect. They do not directly control the pass transistors."
@@ -129,9 +129,9 @@
         "d": "Ramp waveform"
       },
       "explanations": {
-        "a": "Incorrect. The waveform applied to 'a' is a piecewise linear (PWL) waveform.",
+        "a": "Incorrect. The waveform applied to 'a' is a piecewise linear (PWL) waveform, which can be used to analyze propagation delay.",
         "b": "Incorrect. The waveform applied is not a sine wave.",
-        "c": "Correct. The waveform applied is a pulse waveform during the transient analysis.",
+        "c": "Correct. The waveform applied is a pulse waveform during the transient analysis, useful for timing analysis.",
         "d": "Incorrect. The waveform applied is not a ramp waveform."
       },
       "correctAnswer": "c",
@@ -147,7 +147,7 @@
       },
       "explanations": {
         "a": "Incorrect. The '.tran' statement does not define the width of the pass transistor.",
-        "b": "Correct. The '.tran' statement defines the transient analysis parameters.",
+        "b": "Correct. The '.tran' statement defines the transient analysis parameters, which are essential for measuring propagation delay and timing.",
         "c": "Incorrect. The '.tran' statement does not specify the clock signal frequency.",
         "d": "Incorrect. The '.tran' statement is not related to the length of the pulse waveform."
       },
@@ -166,7 +166,7 @@
         "a": "Incorrect. The '.control' and '.endc' statements are not used to control the D-Flip-Flop operation.",
         "b": "Incorrect. Subcircuits are defined separately using '.subckt' statements.",
         "c": "Incorrect. Setting parameters for pass transistors is done using '.PARAM' statements.",
-        "d": "Correct. The '.control' and '.endc' statements are used to control the transient analysis."
+        "d": "Correct. The '.control' and '.endc' statements are used to control the transient analysis, which is important for timing and delay measurements."
       },
       "correctAnswer": "d",
       "difficulty": "advanced"
@@ -180,13 +180,81 @@
         "d": "Defines the parameters for transient analysis"
       },
       "explanations": {
-        "a": "Correct. The 'plot v(a) v(clk)' statement plots the input signals 'a' and 'clk'.",
+        "a": "Correct. The 'plot v(a) v(clk)' statement plots the input signals 'a' and 'clk', which are important for timing analysis.",
         "b": "Incorrect. The 'plot' statement only specifies the input signals, not the outputs.",
         "c": "Incorrect. Setting the background color is not done with the 'plot' statement.",
         "d": "Incorrect. Defining parameters for transient analysis is done using '.PARAM' statements."
       },
       "correctAnswer": "a",
       "difficulty": "advanced"
+    },
+    {
+      "question": "What is propagation delay in a D-Flip-Flop circuit?",
+      "answers": {
+        "a": "The time taken for the output to change after the clock edge",
+        "b": "The time taken for the clock signal to reach the flip-flop",
+        "c": "The time taken for the input to stabilize",
+        "d": "The time taken for the power supply to turn on"
+      },
+      "explanations": {
+        "a": "Correct. Propagation delay is the time taken for the output to change after the clock edge in a D-Flip-Flop.",
+        "b": "Incorrect. This is not the definition of propagation delay in flip-flop circuits.",
+        "c": "Incorrect. Input stabilization time is not propagation delay.",
+        "d": "Incorrect. Power supply turn-on time is unrelated to propagation delay."
+      },
+      "correctAnswer": "a",
+      "difficulty": "timing"
+    },
+    {
+      "question": "How can propagation delay in a D-Flip-Flop be measured using SPICE simulation?",
+      "answers": {
+        "a": "By measuring the time difference between clock edge and output change",
+        "b": "By measuring the voltage of the power supply",
+        "c": "By measuring the input signal rise time",
+        "d": "By measuring the clock frequency"
+      },
+      "explanations": {
+        "a": "Correct. Propagation delay is measured by finding the time difference between the clock edge and the output change in SPICE simulation.",
+        "b": "Incorrect. Power supply voltage is not used to measure propagation delay.",
+        "c": "Incorrect. Input signal rise time is not propagation delay.",
+        "d": "Incorrect. Clock frequency is not used to measure propagation delay."
+      },
+      "correctAnswer": "a",
+      "difficulty": "timing"
+    },
+    {
+      "question": "What is setup time in the context of D-Flip-Flop timing analysis?",
+      "answers": {
+        "a": "The minimum time the input must be stable before the clock edge",
+        "b": "The minimum time the output must be stable after the clock edge",
+        "c": "The minimum time the clock must be high",
+        "d": "The minimum time the power supply must be on"
+      },
+      "explanations": {
+        "a": "Correct. Setup time is the minimum time the input must be stable before the clock edge for reliable operation.",
+        "b": "Incorrect. Output stability after the clock edge is called hold time, not setup time.",
+        "c": "Incorrect. Clock high time is not setup time.",
+        "d": "Incorrect. Power supply on time is unrelated to setup time."
+      },
+      "correctAnswer": "a",
+      "difficulty": "timing"
+    },
+    {
+      "question": "What is hold time in the context of D-Flip-Flop timing analysis?",
+      "answers": {
+        "a": "The minimum time the input must be stable after the clock edge",
+        "b": "The minimum time the output must be stable before the clock edge",
+        "c": "The minimum time the clock must be low",
+        "d": "The minimum time the power supply must be off"
+      },
+      "explanations": {
+        "a": "Correct. Hold time is the minimum time the input must be stable after the clock edge for reliable operation.",
+        "b": "Incorrect. Output stability before the clock edge is not hold time.",
+        "c": "Incorrect. Clock low time is not hold time.",
+        "d": "Incorrect. Power supply off time is unrelated to hold time."
+      },
+      "correctAnswer": "a",
+      "difficulty": "timing"
     }
   ]
 }
