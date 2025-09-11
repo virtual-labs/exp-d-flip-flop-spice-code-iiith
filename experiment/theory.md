@@ -1,4 +1,4 @@
-## D-Flip-Flop Fundamentals
+### D-Flip-Flop Fundamentals
 
 The working of D flip flop is similar to the D latch except that the output of D Flip Flop takes the state of the D input at the moment of a positive edge at the clock pin (or negative edge if the clock input is active low) and delays it by one clock cycle. That's why, it is commonly known as a delay flip flop. The D FlipFlop can be interpreted as a delay line or zero order hold. The advantage of the D flip-flop over the D-type "transparent latch" is that the signal on the D input pin is captured the moment the flip-flop is clocked, and subsequent changes on the D input will be ignored until the next clock event.
 
@@ -18,12 +18,30 @@ From the timing diagram it is clear that the output Q changes only at the positi
 6. FPGA contains edge triggered flip flops.
 7. D flip flops are also used in finite state machines.
 
-**Edge Triggering vs. Level Clocking:**
+### Edge Triggering in D-Flip-Flops
 
-1. When a circuit is edge triggered the output can change only on the rising or falling edge of the clock. But in the case of level-clocked, the output can change when the clock is high (or low).
-2. In edge triggering output can change only at one instant during the clock cycle; with level clocking output can change during an entire half cycle of the clock.
+Edge triggering is a key property of D-Flip-Flops that distinguishes them from latches. In an edge-triggered device, the output changes state only at the precise moment of a clock transition—either the rising edge (positive edge) or falling edge (negative edge). This ensures that the data is sampled and transferred at a well-defined instant, providing reliable synchronization in sequential circuits.
 
-## SPICE - Introduction and Fundamentals
+**Positive Edge Triggering:**
+
+- The output Q updates to the value of D only at the rising edge of the clock signal.
+- Any changes in D after the clock edge are ignored until the next clock event.
+
+**Negative Edge Triggering:**
+
+- The output Q updates to the value of D only at the falling edge of the clock signal.
+- Used in some designs for specific timing requirements.
+
+**Advantages of Edge Triggering:**
+
+- Prevents glitches and race conditions by ensuring output changes only at clock edges.
+- Enables precise timing and synchronization in digital systems, such as registers, counters, and state machines.
+
+**SPICE Simulation of Edge Triggering:**
+
+- In SPICE, edge triggering can be analyzed by applying pulse or piecewise linear (PWL) clock signals and observing output transitions.
+
+### SPICE - Introduction and Fundamentals
 
 In the experiments we have done till now we have designed gates by arranging transistors in various fashions. The simulation of these designs gave graphs of output voltages and we analyzed how these graph changes with varying different parameters of the transistor. Now when you place a transistor on screen there is a back end code which tells a simulator what are the points to which the transistor's substrate, gate, drain, source are connected. The language in which this information is conveyed is spice.
 
@@ -46,7 +64,7 @@ Several types of circuit analyses can be done using SPICE program. Here are the 
 
 All analyses can be done at different temperatures. The default temperature is 300K.
 
-## SPICE Structure and Syntax
+### SPICE Structure and Syntax
 
 A spice input file, also called source file, consists of three parts:
 
@@ -88,7 +106,7 @@ The output variables can be voltage or currents in voltage sources. Node voltage
 - R: Real part.
 - I: Imaginary part.
 
-## SPICE Netlist Example - Basic Circuit Elements
+### SPICE Netlist Example - Basic Circuit Elements
 
 **Example SPICE Netlist Components:**
 
@@ -164,7 +182,7 @@ The output variables can be voltage or currents in voltage sources. Node voltage
 11. **.end**
     - Marks the end of the spice code.
 
-## D-Flip-Flop Implementation using Master-Slave Configuration
+### D-Flip-Flop Implementation using Master-Slave Configuration
 
 **POSITIVE EDGE TRIGGERED FLIP FLOP**
 
