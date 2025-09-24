@@ -70,7 +70,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "What does the 'Xn' label represent in the code?",
+      "question": "What does the 'Xflipflop' label represent in the code?",
       "answers": {
         "a": "A voltage source",
         "b": "A subcircuit instance of a D flip-flop",
@@ -78,10 +78,10 @@
         "d": "An inverter"
       },
       "explanations": {
-        "a": "Incorrect. 'Xn' does not represent a voltage source; it is a subcircuit instance.",
-        "b": "Correct. 'Xn' is a subcircuit instance of a D flip-flop, used for modular design.",
-        "c": "Incorrect. 'Xn' does not represent a pass transistor.",
-        "d": "Incorrect. 'Xn' does not represent an inverter."
+        "a": "Incorrect. 'Xflipflop' does not represent a voltage source; it is a subcircuit instance.",
+        "b": "Correct. 'Xflipflop' is a subcircuit instance of a D flip-flop, used for modular design and instantiation in SPICE code.",
+        "c": "Incorrect. 'Xflipflop' does not represent a pass transistor.",
+        "d": "Incorrect. 'Xflipflop' does not represent an inverter."
       },
       "correctAnswer": "b",
       "difficulty": "intermediate"
