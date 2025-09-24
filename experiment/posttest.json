@@ -78,12 +78,12 @@
         "d": "Two pass transistors"
       },
       "explanations": {
-        "a": "Incorrect. The 'd_flipflop' subcircuit combines a clock signal and a D-Latch, not just an inverter and clock.",
-        "b": "Incorrect. The 'd_flipflop' subcircuit contains only one D-Latch.",
-        "c": "Correct. The 'd_flipflop' subcircuit combines a clock signal and a D-Latch to achieve edge-triggered operation.",
+        "a": "Incorrect. The 'd_flipflop' subcircuit does not just combine an inverter and a clock signal.",
+        "b": "Correct. The 'd_flipflop' subcircuit combines two D-Latches (master-slave configuration) to achieve edge-triggered operation.",
+        "c": "Incorrect. While a clock signal and a D-Latch are involved, the key is the use of two D-Latches.",
         "d": "Incorrect. The 'd_flipflop' subcircuit does not involve two pass transistors."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
@@ -95,12 +95,12 @@
         "d": "supply"
       },
       "explanations": {
-        "a": "Correct. The parameter 'Wp' sets the width of the pass transistor, which can affect propagation delay.",
-        "b": "Incorrect. 'Wmin' sets the minimum width, but 'Wp' is used for the actual width.",
+        "a": "Incorrect. 'Wp' is often used for PMOS width, but 'Wmin' sets the minimum width for all transistors, including pass transistors.",
+        "b": "Correct. 'Wmin' sets the minimum width of the pass transistor, ensuring proper sizing in the code.",
         "c": "Incorrect. 'Lmin' sets the minimum length, not the width of the pass transistor.",
         "d": "Incorrect. 'supply' is not used for setting the width of the pass transistor."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "intermediate"
     },
     {
@@ -112,12 +112,12 @@
         "d": "To control the pass transistors"
       },
       "explanations": {
-        "a": "Correct. 'V1' and 'V2' are voltage sources supplying power to the circuit, ensuring proper operation and timing.",
-        "b": "Incorrect. They are not specifically designed for generating clock signals.",
-        "c": "Incorrect. 'V1' and 'V2' are voltage sources, not input signal generators.",
+        "a": "Incorrect. 'V1' and 'V2' are not used to supply power to the entire circuit; they provide input signals.",
+        "b": "Incorrect. Only 'V2' may generate a clock signal, but both are used for input signals.",
+        "c": "Correct. 'V1' and 'V2' are voltage sources that provide the input signals 'a' and 'clk' for simulation and timing analysis.",
         "d": "Incorrect. They do not directly control the pass transistors."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "c",
       "difficulty": "intermediate"
     },
     {
