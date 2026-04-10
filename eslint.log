@@ -1,0 +1,7 @@
+
+/home/runner/work/exp-d-flip-flop-spice-code-iiith/exp-d-flip-flop-spice-code-iiith/experiment/simulation/js/main.js
+  67:9  warning  'boxOrder1' is assigned a value but never used  no-unused-vars
+  68:9  warning  'boxOrder2' is assigned a value but never used  no-unused-vars
+
+✖ 2 problems (0 errors, 2 warnings)
+

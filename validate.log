@@ -1,0 +1,11 @@
+{
+  _: [],
+  f: [
+    '/home/runner/work/exp-d-flip-flop-spice-code-iiith/exp-d-flip-flop-spice-code-iiith/experiment-descriptor.json'
+  ],
+  files: [
+    '/home/runner/work/exp-d-flip-flop-spice-code-iiith/exp-d-flip-flop-spice-code-iiith/experiment-descriptor.json'
+  ],
+  '$0': 'validate'
+}
+Validated true
